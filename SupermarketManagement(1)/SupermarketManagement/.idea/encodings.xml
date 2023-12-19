@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/customer/ordered/bill.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/customer/ordered/billInfo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/customer/ordered/order.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/customer/shopping/cart.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/customer/shopping/goodPage.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/customer/shopping/hotSale.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/customer/updateUserInfo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/employee/PersonInfo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/employee/goodPage.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/employee/noticeInfo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/employee/noticePage.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/employee/updateUserInfo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/goods/addGood.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/goods/goodPage.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/goods/goodSaleNum.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/goods/updateGood.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/orders/billInfo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/orders/bills.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/revenue.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/updateUserInfo.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manager/userPage.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../sp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../sp/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

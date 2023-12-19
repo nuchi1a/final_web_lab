@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace命名空间,在里面可以自定义标签-->
+<mapper namespace="mapper.GoodMapper">
+    
+    <resultMap id="goodResultMap" type="good">
+        <result column="good_name" property="goodName"></result>
+        <result column="company_name" property="companyName"></result>
+        <result column="sale_price" property="salePrice"></result>
+        <result column="in_date" property="inDate"></result>
+        <result column="in_price" property="inPrice"></result>
+        <result column="totalsalnum" property="totalsalnum"></result>
+    </resultMap>
+
+    <delete id="deleteByIds">
+        delete from tb_goods where in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectByPageAndCondition" resultType="pojo.dao.Good" resultMap="goodResultMap">
+             select *
+        from tb_good
+        <where>
+            <if test="good.goodName != null and good.goodName != '' ">
+                and good_name like #{good.goodName}
+            </if>
+            <if test="good.companyName != null and good.companyName != '' ">
+                and company_name like #{good.companyName}
+            </if>
+            <if test="good.status != null and good.status != '' ">
+                and status = #{good.status}
+            </if>
+        </where>
+        limit #{begin} , #{size}
+
+    </select>
+
+    <select id="selectTotalCountByCondition" resultType="java.lang.Integer">
+        select count(*)
+        from tb_good
+        <where>
+            <if test="goodName != null and goodName != '' ">
+                and good_name like #{goodName}
+            </if>
+            <if test="companyName != null and companyName != '' ">
+                and company_name like #{companyName}
+            </if>
+            <if test="status != null and status != '' ">
+                and status = #{status}
+            </if>
+        </where>
+
+    </select>
+    <select id="selectHotGoods" resultType="pojo.dao.Good" resultMap="goodResultMap">
+        select tb_good.id,tb_good.good_name,sum(orderitem.buynum) totalsalnum
+        from orderitem,tb_orders,tb_good
+        where orderitem.order_id=tb_orders.id AND tb_good.id = orderitem.good_id
+        and tb_orders.ordertime>DATE_SUB(NOW(),INTERVAL 7 DAY)
+        group by tb_good.id,tb_good.good_name
+        order by totalsalnum DESC
+        limit 0,4
+    </select>
+    <select id="selectGoodsSaleNumber7" resultType="pojo.dao.Good" resultMap="goodResultMap">
+        select tb_good.id,tb_good.good_name,sum(orderitem.buynum) totalsalnum
+        from orderitem,tb_orders,tb_good
+        where orderitem.order_id=tb_orders.id AND tb_good.id = orderitem.good_id
+        and tb_orders.ordertime>DATE_SUB(NOW(),INTERVAL 7 DAY)
+        group by tb_good.id,tb_good.good_name
+        order by totalsalnum DESC
+    </select>
+    <select id="selectGoodsSaleNumber30" resultType="pojo.dao.Good" resultMap="goodResultMap">
+        select tb_good.id,tb_good.good_name,sum(orderitem.buynum) totalsalnum
+        from orderitem,tb_orders,tb_good
+        where orderitem.order_id=tb_orders.id AND tb_good.id = orderitem.good_id
+        and tb_orders.ordertime>DATE_SUB(NOW(),INTERVAL 30 DAY)
+        group by tb_good.id,tb_good.good_name
+        order by totalsalnum DESC
+    </select>
+    <select id="selectGoodsSaleNumber365" resultType="pojo.dao.Good" resultMap="goodResultMap">
+        select tb_good.id,tb_good.good_name,sum(orderitem.buynum) totalsalnum
+        from orderitem,tb_orders,tb_good
+        where orderitem.order_id=tb_orders.id AND tb_good.id = orderitem.good_id
+        and tb_orders.ordertime>DATE_SUB(NOW(),INTERVAL 365 DAY)
+        group by tb_good.id,tb_good.good_name
+        order by totalsalnum DESC
+
+    </select>
+
+
+</mapper>

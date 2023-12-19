@@ -1,0 +1,8 @@
+.box1{
+    width: 500px;
+    height: 100px;
+    font-size: 24px;
+    background-color: transport;
+    text-align: center;  /*水平居中*/
+    line-height: 100px; /*垂直居中 值为heigth的值*/
+}

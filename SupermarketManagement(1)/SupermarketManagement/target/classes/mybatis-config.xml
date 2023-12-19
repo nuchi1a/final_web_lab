@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="pojo"/>
+    </typeAliases>
+
+    <environments default="development"><!--当前使用的环境-->
+    <environment id="development">
+        <transactionManager type="JDBC"/>
+        <dataSource type="POOLED">
+            <!--数据库连接信息-->
+            <property name="driver" value="com.mysql.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://localhost/supermarketmanagement?useSSL=false&amp;useServerPrepStmts=true"/>
+            <property name="username" value="root"/>
+            <property name="password" value="hsp"/>
+        </dataSource>
+    </environment>
+    </environments>
+
+    <mappers>
+        <!--加载SQL映射文件-->
+        <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/GoodMapper.xml"/>
+        <mapper resource="mapper/OrdersMapper.xml"/>
+        <mapper resource="mapper/OrderItemMapper.xml"/>
+        <mapper resource="mapper/EmployeeInfoMapper.xml"/>
+        <mapper resource="mapper/NoticeMapper.xml"/>
+    </mappers>
+</configuration>
